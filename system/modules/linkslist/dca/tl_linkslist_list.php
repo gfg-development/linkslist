@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Table tl_linkslist_list
  */

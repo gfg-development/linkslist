@@ -13,6 +13,6 @@ $GLOBALS['BE_MOD']['content']['linkslist'] = array(
  */
 $GLOBALS['FE_MOD']['linkslist'] = array
 (
-	'linkslist_list'     => 'ModuleLinkslistList',
+	'linkslist_list'     => 'ModuleLinksListList',
 );
 ?>
