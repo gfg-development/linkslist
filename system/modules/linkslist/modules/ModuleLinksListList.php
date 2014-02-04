@@ -48,7 +48,6 @@ class ModuleLinksListList extends Module
             }
             
             $sql = 'SELECT * FROM tl_linkslist_link '.$where.' ORDER BY '.$order;
-            print $sql;
 	    /** @var \Contao\Database\Result $rs */
             $rs = Database::getInstance()
 		    ->query($sql);
