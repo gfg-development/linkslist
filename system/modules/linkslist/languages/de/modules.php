@@ -1,5 +1,13 @@
 <?php
 
+/**
+ *
+ * Copyright (c) 2014 gfg-development
+ *
+ * @link    http://www.gfg-development.de
+ * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ */
+
 $GLOBALS['TL_LANG']['MOD']['linkslist'][0] = 'Linkliste';
 $GLOBALS['TL_LANG']['MOD']['linkslist'][1] = 'Linkliste verwalten';
 

@@ -1,6 +1,14 @@
 <?php
 
 /**
+ *
+ * Copyright (c) 2014 gfg-development
+ *
+ * @link    http://www.gfg-development.de
+ * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ */
+
+/**
  * Module config
  */
 
