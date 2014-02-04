@@ -11,10 +11,9 @@ $GLOBALS['TL_LANG']['tl_module']['config_legend']     = 'Moduleinstellungen';
 
 $GLOBALS['TL_LANG']['tl_module']['linkslist_sorting'][0] = 'Sortiermodus';
 $GLOBALS['TL_LANG']['tl_module']['linkslist_sorting'][1] = 'Bitte wählen Sie aus, wie die Liste der Links sortiert sein soll';
-$GLOBALS['TL_LANG']['tl_module']['linkslist_sortings'] = array('A' => 'Alphabetisch', 'C' => 'Nach Altersklasse aufsteigend');
+$GLOBALS['TL_LANG']['tl_module']['linkslist_sortings'] = array('A' => 'Alphabetisch (Name)', 'B' => 'Alphabetisch (URL)', 'C' => 'Alter aufsteigend', 'D' => 'Alter absteigend');
 
-$GLOBALS['TL_LANG']['tl_module']['linkslist_id'][0] = 'Blub';
-$GLOBALS['TL_LANG']['tl_module']['linkslist_id'][1] = 'Blub 2';
-$GLOBALS['TL_LANG']['tl_module']['linkslist_ids'] = array(1 => 'Test', 2 => 'Test2', 3 => 'Test3');
+$GLOBALS['TL_LANG']['tl_module']['linkslist_id'][0] = 'Linklisten';
+$GLOBALS['TL_LANG']['tl_module']['linkslist_id'][1] = 'Bitte wählen Sie eine oder mehere Linklisten aus';
 
 ?>

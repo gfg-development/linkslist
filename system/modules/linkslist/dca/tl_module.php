@@ -12,11 +12,9 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['linkslist_id'] = array
     'label'                   => &$GLOBALS['TL_LANG']['tl_module']['linkslist_id'],  
     'exclude'                 => true, 
     'inputType'               => 'checkbox',
-    'options_callback'        => 
-    //'foreignKey'              => 'tl_linkslist_list.id',
-    //'reference'               => &$GLOBALS['TL_LANG']['tl_module']['linkslist_ids'], 
+    'foreignKey'              => 'tl_linkslist_list.name',
     'eval'                    => array('mandatory'=>true, 'multiple'=>true),
-    'sql'                     => "int(10) unsigned NOT NULL"
+    'sql'                     => "varchar(256) NOT NULL"
 ); 
 $GLOBALS['TL_DCA']['tl_module']['fields']['linkslist_sorting'] = array 
 ( 
@@ -24,10 +22,10 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['linkslist_sorting'] = array
     'default'                 => 'A', 
     'exclude'                 => true, 
     'inputType'               => 'select', 
-    'options'                 => array('A','C'), 
+    'options'                 => array('A', 'B', 'C', 'D'), 
     'reference'               => &$GLOBALS['TL_LANG']['tl_module']['linkslist_sortings'], 
     'eval'                    => array('mandatory'=>true),
-    'sql'                     => "varchar(1) NOT NULL default 'B'"
+    'sql'                     => "varchar(1) NOT NULL default 'A'"
 );
 
 ?>
