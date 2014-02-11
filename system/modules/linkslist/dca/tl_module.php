@@ -12,7 +12,7 @@
  * Module config
  */
 
-$GLOBALS['TL_DCA']['tl_module']['palettes']['linkslist_list'] = '{title_legend},name,headline,type;{config_legend},linkslist_id;{sort_legend},linkslist_sorting;
+$GLOBALS['TL_DCA']['tl_module']['palettes']['linkslist_list'] = '{title_legend},name,headline,type;{config_legend},linkslist_id, linkslist_use_subtitles;{sort_legend},linkslist_sorting;
 {protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['linkslist_id'] = array 
@@ -23,7 +23,16 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['linkslist_id'] = array
     'foreignKey'              => 'tl_linkslist_list.name',
     'eval'                    => array('mandatory'=>true, 'multiple'=>true),
     'sql'                     => "varchar(256) NOT NULL"
+);
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['linkslist_use_subtitles'] = array 
+( 
+    'label'                   => &$GLOBALS['TL_LANG']['tl_module']['linkslist_use_subtitles'],  
+    'exclude'                 => true, 
+    'inputType'               => 'checkbox',
+    'sql'                     => "char(1) NOT NULL default ''"
 ); 
+
 $GLOBALS['TL_DCA']['tl_module']['fields']['linkslist_sorting'] = array 
 ( 
     'label'                   => &$GLOBALS['TL_LANG']['tl_module']['linkslist_sorting'], 

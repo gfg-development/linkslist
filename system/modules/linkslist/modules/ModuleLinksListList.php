@@ -26,16 +26,7 @@ class ModuleLinksListList extends Module
                     ->execute($this->id);
             $lists = unserialize($moduleParams->linkslist_id);
             $where = 'WHERE ';
-            $first = true;
-            foreach($lists as $list_id)
-            {
-                if(!$first)
-                {
-                    $where .= ' OR ';
-                }
-                $where .= 'pid = '.$list_id;
-                $first = false;
-            }
+            $order = '';
             
             switch($moduleParams->linkslist_sorting)
             {
@@ -53,13 +44,46 @@ class ModuleLinksListList extends Module
                     break;
                 default:
                     $order = 'name';
-            }
+                }
             
-            $sql = 'SELECT * FROM tl_linkslist_link '.$where.' ORDER BY '.$order;
-	    /** @var \Contao\Database\Result $rs */
-            $rs = Database::getInstance()
-		    ->query($sql);
-	    $this->Template->links = $rs->fetchAllAssoc();
+            if($moduleParams->linkslist_use_subtitles == 0)
+            {
+                $first = true;
+                foreach($lists as $listId)
+                {
+                    if(!$first)
+                    {
+                        $where .= ' OR ';
+                    }
+                    $where .= 'pid = '.$listId;
+                    $first = false;
+                }
+                
+                $sql = 'SELECT * FROM tl_linkslist_link '.$where.' ORDER BY '.$order;               
+                /** @var \Contao\Database\Result $rs */
+                $rs = Database::getInstance()
+                    ->query($sql);
+                $data[''] = $rs->fetchAllAssoc();
+                $this->Template->data = $data;
+                $this->Template->subtitles = false;
+            }
+            else
+            {
+                $links = array();
+                foreach($lists as $listId)
+                {
+                    $rs = Database::getInstance()
+                        ->query('SELECT * FROM tl_linkslist_link WHERE pid = '.$listId.' ORDER BY '.$order);
+                    $data = $rs->fetchAllAssoc();
+                    
+                    $listParams = Database::getInstance()->prepare("SELECT * FROM tl_linkslist_list WHERE id=?") 
+                        ->limit(1) 
+                        ->execute($listId);
+                    $links[$listParams->name] = $data;
+                }
+                $this->Template->data = $links;
+                $this->Template->subtitles = true;
+            }
 	}
 }
 

@@ -3,10 +3,15 @@
  
 <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
 <?php endif; ?>
- 
+
+<?php foreach($this->data as $title => $links): ?>
+<?php if($this->subtitles): ?>
+<h5><?php echo $title; ?></h5>
+<?php endif; ?>
 <ul>
-<?php foreach ($this->links as $link): ?>
+<?php foreach ($links as $link): ?>
 	<li><a href="<?php echo $link['url']; ?>"><?php echo $link['name']; ?></a> - <span class="info">(<?php echo $link['info']; ?>)</span><span class="desc"><?php echo $link['description']; ?></span></li>
 <?php endforeach; ?>
-</ul> 
+</ul>
+<?php endforeach; ?> 
 </div>
