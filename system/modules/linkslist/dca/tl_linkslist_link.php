@@ -1,36 +1,36 @@
 <?php
 
 /**
- *
- * Copyright (c) 2014 gfg-development
- *
- * @link    http://www.gfg-development.de
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
- */
+*
+* Copyright (c) 2014 gfg-development
+*
+* @link    http://www.gfg-development.de
+* @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+*/
 
 /**
- * Table tl_linkslist_list
- */
+* Table tl_linkslist_list
+*/
 $GLOBALS['TL_DCA']['tl_linkslist_link'] = array
 (
- 
+
 	// Config
 	'config'   => array
 	(
 		'dataContainer'    => 'Table',
-                'ptable'           => 'tl_linkslist_list',
+				'ptable'           => 'tl_linkslist_list',
 		'enableVersioning' => true,
-                'switchToEdit'     => true,
+				'switchToEdit'     => true,
 		'sql'              => array
 		(
 			'keys' => array
 			(
 				'id' => 'primary',
-                                'pid' => 'index'
+								'pid' => 'index'
 			)
 		),
 	),
-        // List
+		// List
 	'list'     => array
 	(
 		'sorting'           => array
@@ -40,12 +40,12 @@ $GLOBALS['TL_DCA']['tl_linkslist_link'] = array
 			'flag'        => 1,
 			'panelLayout' => 'filter;sort,search,limit'
 		),
-                'label'             => array
+				'label'             => array
 		(
 			'fields' => array('name'),
 			'format' => '%s',
 		),
-                'global_operations' => array
+				'global_operations' => array
 		(
 			'all' => array
 			(
@@ -55,9 +55,9 @@ $GLOBALS['TL_DCA']['tl_linkslist_link'] = array
 				'attributes' => 'onclick="Backend.getScrollOffset()" accesskey="e"'
 			)
 		),
-                'operations'        => array
+				'operations'        => array
 		(
-                        'edit' => array
+						'edit' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['tl_linkslist_link']['edit'],
 				'href'                => 'act=edit',
@@ -85,11 +85,17 @@ $GLOBALS['TL_DCA']['tl_linkslist_link'] = array
 			),
 		)
 	),
-        // Palettes
+		// Palettes
 	'palettes' => array
 	(
-		'default'       => '{title_legend},name;{link_legend},url,description,info'
-),
+		'__selector__'  => array('linksource'),
+		'default'       => '{title_legend},name;{link_legend},linksource,linksource_local,linksource_external,description,info'
+	),
+	'subpalettes' => array
+	(
+		'linksource_local'              => 'file',
+		'linksource_external'           => 'url'
+	),
 // Fields
 	'fields'   => array
 	(
@@ -97,25 +103,52 @@ $GLOBALS['TL_DCA']['tl_linkslist_link'] = array
 		(
 			'sql' => "int(10) unsigned NOT NULL auto_increment"
 		),
-                'pid'     => array
+		'pid'     => array
 		(
-                        'foreignKey'              => 'tl_linkslist_list.name',
+			'foreignKey'              => 'tl_linkslist_list.name',
 			'sql'                     => "int(10) unsigned NOT NULL default '0'",
 			'relation'                => array('type'=>'belongsTo', 'load'=>'eager')
 		),
-                'tstamp' => array
+		'tstamp' => array
 		(
 			'sql' => "int(10) unsigned NOT NULL default '0'"
 		),
-                'url'    => array
+		'linksource'    => array
 		(
-			'label'         => &$GLOBALS['TL_LANG']['tl_linkslist_link']['url'],
+			'label'     => &$GLOBALS['TL_LANG']['tl_linkslist_link']['linksource'],
+			'inputType' => 'select',
+			'exclude'   => true,
+			'options'   => array('external', 'local'),
+			'reference' => &$GLOBALS['TL_LANG']['tl_linkslist_link']['linksources'],
+			'eval'      => array(
+				'includeBlankOption' => true,
+				'submitOnChange'     => true,
+				'mandatory'          => true
+			),
+			'sql'       => "varchar(10) NOT NULL default ''"
+		),
+		'url'    => array
+		(
+			'label'     => &$GLOBALS['TL_LANG']['tl_linkslist_link']['url'],
 			'inputType' => 'text',
-			'exclude'     => true,
-                        'eval'      => array(
-                            'mandatory' => true,     
-                        ),
+			'exclude'   => true,
+			'eval'      => array(
+				'mandatory' => true,     
+			),
 			'sql'            => "text NOT NULL"
+		),
+		'file'    => array
+		(
+			'label'         => &$GLOBALS['TL_LANG']['tl_linkslist_link']['file'],
+			'inputType' => 'fileTree',
+			'exclude'     => true,
+						'eval'      => array(
+							'mandatory' => true,
+							'fieldType'=>'radio',
+							'files' => true,
+							'filesOnly' => true,     
+						),
+			'sql'            => "binary(16) NULL"
 		),
 		'description'    => array
 		(
@@ -124,31 +157,31 @@ $GLOBALS['TL_DCA']['tl_linkslist_link'] = array
 			'exclude'     => true,
 			'sql'            => "text NULL"
 		),
-                'info'    => array
+		'info'    => array
 		(
 			'label'         => &$GLOBALS['TL_LANG']['tl_linkslist_link']['info'],
 			'inputType' => 'text',
 			'exclude'     => true,
 			'sql'            => "text NULL"
 		),
-                'name'  => array
+		'name'  => array
 		(
 			'label'     => &$GLOBALS['TL_LANG']['tl_linkslist_link']['name'],
 			'inputType' => 'text',
 			'exclude'   => true,
 			'sorting'   => true,
 			'flag'      => 1,
-                        'search'    => true,
+			'search'    => true,
 			'eval'      => array(
-				'mandatory'   => true,
-                                'unique'         => true,
-                                'maxlength'   => 255,
+			'mandatory'   => true,
+								'unique'         => true,
+								'maxlength'   => 255,
 				'tl_class'        => 'w50',
- 
+
 			),
 			'sql'       => "varchar(255) NOT NULL default ''"
-		)
-       )
+		),
+	)
 );
-        
+		
 ?>

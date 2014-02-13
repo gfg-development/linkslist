@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /**
  *
@@ -30,10 +30,19 @@ $GLOBALS['TL_LANG']['tl_linkslist_link']['new'][1] = 'Einen neuen Link anlegen';
 $GLOBALS['TL_LANG']['tl_linkslist_link']['edit'][0] = 'Link bearbeiten';
 $GLOBALS['TL_LANG']['tl_linkslist_link']['edit'][1] = 'Link ID %s bearbeiten';
  
-$GLOBALS['TL_LANG']['tl_linkslist_link']['delete'][0] = 'Link l�schen';
-$GLOBALS['TL_LANG']['tl_linkslist_link']['delete'][1] = 'Link ID %s l�schen';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['delete'][0] = 'Link löschen';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['delete'][1] = 'Link ID %s löschen';
  
 $GLOBALS['TL_LANG']['tl_linkslist_link']['show'][0] = 'Linkdetails';
 $GLOBALS['TL_LANG']['tl_linkslist_link']['show'][1] = 'Details des Links ID %s anzeigen';
+
+$GLOBALS['TL_LANG']['tl_linkslist_link']['file'][0] = 'Datei';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['file'][1] = 'Datei auswählen, auf die der Link zeigen soll.';
+
+$GLOBALS['TL_LANG']['tl_linkslist_link']['linksource'][0] = 'Ziel des Links';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['linksource'][1] = 'Auswählen, ob der Link auf eine externe Seite/Datei oder auf eine lokale Datei zeigt.';
+
+$GLOBALS['TL_LANG']['tl_linkslist_link']['linksources']['external'] = 'Extern';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['linksources']['local'] = 'Lokal';
 
 ?>
