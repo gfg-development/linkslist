@@ -15,6 +15,28 @@ class ModuleLinksListList extends Module
 	 * @var string
 	 */
 	protected $strTemplate = 'mod_linkslist_list';
+	
+	/**
+	 * Create the Link from the information
+	 */
+	 
+	private function getLinks($data)
+	{
+		$links = array();
+		foreach($data as $key => $d)
+		{
+			for($i = 0; $i < count($d); $i++)
+			{
+				if($d[$i]['linksource'] == 'local')											// 'external' = external, '' = external, 'local' = local
+				{
+					$file = FilesModel::findById($d[$i]['file']);
+					$d[$i]['url'] = Environment::get('uri') . $file->path;
+				}
+			}
+			$links[$key] = $d;
+		}
+		return $links;
+	}
  
 	/**
 	 * Compile the current element
@@ -64,7 +86,7 @@ class ModuleLinksListList extends Module
                 $rs = Database::getInstance()
                     ->query($sql);
                 $data[''] = $rs->fetchAllAssoc();
-                $this->Template->data = $data;
+                $this->Template->data = $this->getLinks($data);
                 $this->Template->subtitles = false;
             }
             else
@@ -81,7 +103,7 @@ class ModuleLinksListList extends Module
                         ->execute($listId);
                     $links[$listParams->name] = $data;
                 }
-                $this->Template->data = $links;
+                $this->Template->data = $this->getLinks($links);
                 $this->Template->subtitles = true;
             }
 	}
