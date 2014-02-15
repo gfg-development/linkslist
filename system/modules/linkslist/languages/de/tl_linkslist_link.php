@@ -24,7 +24,7 @@ $GLOBALS['TL_LANG']['tl_linkslist_link']['description'][1] = 'Geben Sie hier ein
 $GLOBALS['TL_LANG']['tl_linkslist_link']['info'][0] = 'Informationen';
 $GLOBALS['TL_LANG']['tl_linkslist_link']['info'][1] = 'Geben Sie hier Informationen ein.';
  
-$GLOBALS['TL_LANG']['tl_linkslist_link']['new'][0] = 'Neuen Link';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['new'][0] = 'Neuer Link';
 $GLOBALS['TL_LANG']['tl_linkslist_link']['new'][1] = 'Einen neuen Link anlegen';
  
 $GLOBALS['TL_LANG']['tl_linkslist_link']['edit'][0] = 'Link bearbeiten';
