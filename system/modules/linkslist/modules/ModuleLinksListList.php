@@ -27,7 +27,7 @@ class ModuleLinksListList extends Module
 		{
 			for($i = 0; $i < count($d); $i++)
 			{
-				if($d[$i]['linksource'] == 'local')
+				if($d[$i]['linksource'] == 'local')											// 'external' = external, '' = external, 'local' = local
 				{
 					$file = FilesModel::findById($d[$i]['file']);
 					$d[$i]['url'] = Environment::get('uri') . $file->path;
