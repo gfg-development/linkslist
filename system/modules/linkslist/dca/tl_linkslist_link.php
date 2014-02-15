@@ -130,6 +130,7 @@ $GLOBALS['TL_DCA']['tl_linkslist_link'] = array
 		'url'    => array
 		(
 			'label'     => &$GLOBALS['TL_LANG']['tl_linkslist_link']['url'],
+			'default'	=> 'http://www.',
 			'inputType' => 'text',
 			'exclude'   => true,
 			'eval'      => array(
