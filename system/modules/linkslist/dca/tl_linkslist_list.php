@@ -93,7 +93,7 @@ $GLOBALS['TL_DCA']['tl_linkslist_list'] = array
         // Palettes
 	'palettes' => array
 	(
-		'default'       => '{title_legend},name'
+		'default'       => '{title_legend},name;{config_legend},target'
 ),
 // Fields
 	'fields'   => array
@@ -113,7 +113,7 @@ $GLOBALS['TL_DCA']['tl_linkslist_list'] = array
 			'exclude'   => true,
 			'sorting'   => true,
 			'flag'      => 1,
-                        'search'    => true,
+            'search'    => true,
 			'eval'      => array(
 				'mandatory'   => true,
                                 'unique'         => true,
@@ -122,6 +122,13 @@ $GLOBALS['TL_DCA']['tl_linkslist_list'] = array
  
 			),
 			'sql'       => "varchar(255) NOT NULL default ''"
+		),
+		'target' => array 
+		(
+			'label'		=> &$GLOBALS['TL_LANG']['tl_linkslist_list']['target'],
+			'inputType' => 'checkbox',
+			'exclude'   => true,
+			'sql'		=> "char(1) NOT NULL default ''"
 		)
        )
 );

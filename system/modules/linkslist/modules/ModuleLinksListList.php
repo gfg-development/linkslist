@@ -16,6 +16,8 @@ class ModuleLinksListList extends Module
 	 */
 	protected $strTemplate = 'mod_linkslist_list';
 	
+	private $m_lists = array();
+	
 	/**
 	 * Create the Link from the information
 	 */
@@ -32,6 +34,7 @@ class ModuleLinksListList extends Module
 					$file = FilesModel::findById($d[$i]['file']);
 					$d[$i]['url'] = Environment::get('uri') . $file->path;
 				}
+				$d[$i]['target'] = $m_list[$d[$i]['pid']] != 0 ? True : False;
 			}
 			$links[$key] = $d;
 		}
@@ -43,6 +46,15 @@ class ModuleLinksListList extends Module
 	 */
 	protected function compile()
 	{
+			/** @var \Contao\Database\Result $rs */
+			$rs = Database::getInstance()->query("SELECT id,target FROM tl_linkslist_list");
+			$lists = $rs->fetchAllAssoc();
+			
+			for($i = 0; $i<count($lists); $i++)
+			{
+				$m_lists[$lists[$i]['pid']] = $lists[$i]['target'];
+			}
+			
             $moduleParams = Database::getInstance()->prepare("SELECT * FROM tl_module WHERE id=?") 
                     ->limit(1) 
                     ->execute($this->id);
