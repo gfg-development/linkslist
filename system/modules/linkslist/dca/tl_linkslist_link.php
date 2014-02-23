@@ -89,12 +89,13 @@ $GLOBALS['TL_DCA']['tl_linkslist_link'] = array
 	'palettes' => array
 	(
 		'__selector__'  => array('linksource'),
-		'default'       => '{title_legend},name;{link_legend},linksource,linksource_local,linksource_external,description,info'
+		'default'       => '{title_legend},name;{link_legend},linksource,linksource_local,linksource_external,linksource_page,target,description,info'
 	),
 	'subpalettes' => array
 	(
 		'linksource_local'              => 'file',
-		'linksource_external'           => 'url'
+		'linksource_external'           => 'url',
+		'linksource_page'           => 'page'
 	),
 // Fields
 	'fields'   => array
@@ -118,7 +119,7 @@ $GLOBALS['TL_DCA']['tl_linkslist_link'] = array
 			'label'     => &$GLOBALS['TL_LANG']['tl_linkslist_link']['linksource'],
 			'inputType' => 'select',
 			'exclude'   => true,
-			'options'   => array('external', 'local'),
+			'options'   => array('external', 'local', 'page'),
 			'reference' => &$GLOBALS['TL_LANG']['tl_linkslist_link']['linksources'],
 			'eval'      => array(
 				'includeBlankOption' => true,
@@ -151,6 +152,17 @@ $GLOBALS['TL_DCA']['tl_linkslist_link'] = array
 						),
 			'sql'            => "binary(16) NULL"
 		),
+		'page'	=> array
+		(
+			'label' => &$GLOBALS['TL_LANG']['tl_linkslist_link']['page'],
+			'inputType' => 'pageTree',
+			'exclude'     => true,
+						'eval'      => array(
+							'mandatory' => true,
+							'fieldType'=>'radio'     
+						),
+			'sql'            => "int(10) unsigned NULL"
+		),
 		'description'    => array
 		(
 			'label'         => &$GLOBALS['TL_LANG']['tl_linkslist_link']['description'],
@@ -181,6 +193,18 @@ $GLOBALS['TL_DCA']['tl_linkslist_link'] = array
 
 			),
 			'sql'       => "varchar(255) NOT NULL default ''"
+		),
+		'target'    => array
+		(
+			'label'     => &$GLOBALS['TL_LANG']['tl_linkslist_link']['target'],
+			'inputType' => 'select',
+			'exclude'   => true,
+			'options'   => array('self', 'blank'),
+			'reference' => &$GLOBALS['TL_LANG']['tl_linkslist_link']['targets'],
+			'eval'      => array(
+				'includeBlankOption' => true,
+			),
+			'sql'       => "varchar(10) NOT NULL default ''"
 		),
 	)
 );

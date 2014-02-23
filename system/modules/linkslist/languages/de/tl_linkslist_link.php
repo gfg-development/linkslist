@@ -39,10 +39,20 @@ $GLOBALS['TL_LANG']['tl_linkslist_link']['show'][1] = 'Details des Links ID %s a
 $GLOBALS['TL_LANG']['tl_linkslist_link']['file'][0] = 'Datei';
 $GLOBALS['TL_LANG']['tl_linkslist_link']['file'][1] = 'Datei auswählen, auf die der Link zeigen soll.';
 
+$GLOBALS['TL_LANG']['tl_linkslist_link']['page'][0] = 'Lokale Seite';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['page'][1] = 'Lokale Seite auswählen, auf die der Link zeigen soll.';
+
+$GLOBALS['TL_LANG']['tl_linkslist_link']['target'][0] = 'Links in neuem oder gleichem Fenster/Tab öffnen';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['target'][1] = 'Bitte auswählen ob der Link in einem neuen Fenster/Tab oder dem gleichen Fenster/Tab geöffnet werden soll. Achtung überschreibt die Einstellung der Liste';
+
 $GLOBALS['TL_LANG']['tl_linkslist_link']['linksource'][0] = 'Ziel des Links';
 $GLOBALS['TL_LANG']['tl_linkslist_link']['linksource'][1] = 'Auswählen, ob der Link auf eine externe Seite/Datei oder auf eine lokale Datei zeigt.';
 
 $GLOBALS['TL_LANG']['tl_linkslist_link']['linksources']['external'] = 'Extern';
 $GLOBALS['TL_LANG']['tl_linkslist_link']['linksources']['local'] = 'Lokal';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['linksources']['page'] = 'Lokale Seite';
+
+$GLOBALS['TL_LANG']['tl_linkslist_link']['targets']['self'] = 'Gleiches Fenster/Tab';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['targets']['blank'] = 'Neues Fenster/Tab';
 
 ?>

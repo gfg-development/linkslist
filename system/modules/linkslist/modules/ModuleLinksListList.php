@@ -29,12 +29,31 @@ class ModuleLinksListList extends Module
 		{
 			for($i = 0; $i < count($d); $i++)
 			{
-				if($d[$i]['linksource'] == 'local')											// 'external' = external, '' = external, 'local' = local
+				if($d[$i]['linksource'] == 'local')											// 'external' = external, '' = external, 'local' = local, 'page' = local page
 				{
 					$file = FilesModel::findById($d[$i]['file']);
 					$d[$i]['url'] = Environment::get('uri') . $file->path;
 				}
-				$d[$i]['target'] = ($this->m_lists[$d[$i]['pid']] == 0) ? False : True;
+				elseif($d[$i]['linksource'] == 'page') 
+				{
+					$page = PageModel::findPublishedById($d[$i]['page']);
+					if($page != NULL)
+					{
+						$d[$i]['url'] = $page->getFrontendUrl();
+					}
+					else 
+					{
+						$d[$i]['url'] = '';
+					}
+				}
+				if(!empty($d[$i]['target']))
+				{
+					$d[$i]['target'] = ($d[$i]['target'] == "self") ? False : True;
+				}
+				else 
+				{
+					$d[$i]['target'] = ($this->m_lists[$d[$i]['pid']] == 0) ? False : True;
+				}
 			}
 			$links[$key] = $d;
 		}

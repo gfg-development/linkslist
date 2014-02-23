@@ -36,4 +36,23 @@ $GLOBALS['TL_LANG']['tl_linkslist_link']['delete'][1] = 'Delete link ID %s';
 $GLOBALS['TL_LANG']['tl_linkslist_link']['show'][0] = 'Link details';
 $GLOBALS['TL_LANG']['tl_linkslist_link']['show'][1] = 'Show links details ID %s';
 
+$GLOBALS['TL_LANG']['tl_linkslist_link']['file'][0] = 'File';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['file'][1] = "Select file, which should be the link's target";
+
+$GLOBALS['TL_LANG']['tl_linkslist_link']['page'][0] = 'Local Page';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['page'][1] = "Select local page, which should be the link's target";
+
+$GLOBALS['TL_LANG']['tl_linkslist_link']['target'][0] = 'Open link in new or same window/tab';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['target'][1] = "Select if the link is opened in a new or the same window/tab. Warning: This option overwrites the list's option";
+
+$GLOBALS['TL_LANG']['tl_linkslist_link']['linksource'][0] = 'Target of the link';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['linksource'][1] = 'Select the target of the link';
+
+$GLOBALS['TL_LANG']['tl_linkslist_link']['linksources']['external'] = 'External';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['linksources']['local'] = 'Local';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['linksources']['page'] = 'Local page';
+
+$GLOBALS['TL_LANG']['tl_linkslist_link']['targets']['self'] = 'Same Window/Tab';
+$GLOBALS['TL_LANG']['tl_linkslist_link']['targets']['blank'] = 'New Window/Tab';
+
 ?>
