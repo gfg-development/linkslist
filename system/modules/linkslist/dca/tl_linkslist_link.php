@@ -187,7 +187,6 @@ $GLOBALS['TL_DCA']['tl_linkslist_link'] = array
 			'search'    => true,
 			'eval'      => array(
 			'mandatory'   => true,
-								'unique'         => true,
 								'maxlength'   => 255,
 				'tl_class'        => 'w50',
 
