@@ -10,7 +10,7 @@
 <?php endif; ?>
 <ul>
 <?php foreach ($links as $link): ?>
-	<li><a href="<?php echo $link['url']; ?>"<?php if($link['target']): ?> target="_blank"<?php endif; ?>><?php echo $link['name']; ?></a> - <span class="info">(<?php echo $link['info']; ?>)</span><span class="desc"><?php echo $link['description']; ?></span></li>
+	<li><a href="<?php echo $link['url']; ?>"<?php if($link['target']): ?> target="_blank"<?php endif; ?>><?php echo $link['name']; ?></a> - <?php if($link['info'] != ''): ?> <span class="info">(<?php echo $link['info']; ?>)</span> <?php endif; ?><span class="desc"><?php echo $link['description']; ?></span></li>
 <?php endforeach; ?>
 </ul>
 <?php endforeach; ?> 

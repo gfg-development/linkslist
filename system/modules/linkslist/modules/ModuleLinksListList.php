@@ -39,7 +39,8 @@ class ModuleLinksListList extends Module
 					$page = PageModel::findPublishedById($d[$i]['page']);
 					if($page != NULL)
 					{
-						$d[$i]['url'] = $page->getFrontendUrl();
+						//$d[$i]['url'] = $page->getFrontendUrl();     // Only since 3.2.0 beta 2
+						$d[$i]['url'] = \Controller::generateFrontendUrl($page->row());
 					}
 					else 
 					{
