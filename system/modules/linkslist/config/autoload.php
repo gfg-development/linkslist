@@ -18,6 +18,9 @@ ClassLoader::addClasses(array
 (
 	// Modules
 	'ModuleLinksListList' => 'system/modules/linkslist/modules/ModuleLinksListList.php',
+
+	// Elements
+	'ContentLinkslist'     => 'system/modules/linkslist/elements/ContentLinkslist.php',
 ));
 
 

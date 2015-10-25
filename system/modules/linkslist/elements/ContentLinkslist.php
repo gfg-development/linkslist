@@ -1,8 +1,7 @@
 <?php
-
 /**
  *
- * Copyright (c) 2014 gfg-development
+ * Copyright (c) 2015 gfg-development
  *
  * @link    http://www.gfg-development.de
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -10,8 +9,9 @@
 
 require_once(__DIR__.'/../classes/LinksList.php');
 
-class ModuleLinksListList extends Module
+class ContentLinkslist extends \ContentElement
 {
+
 	/**
 	 * Template
 	 * @var string
@@ -24,7 +24,7 @@ class ModuleLinksListList extends Module
 	protected function compile()
 	{
         $linksList = NEW LinksList();
-        $t = $linksList->getVars(unserialize($this->linkslist_id), $this->linkslist_sorting, $this->linkslist_use_subtitles);
+		$t = $linksList->getVars(unserialize($this->linkslist_id), $this->linkslist_sorting, $this->linkslist_use_subtitles);
         $this->Template->data = $t['data'];
         $this->Template->subtitles = $t['subtitles'];
 	}
