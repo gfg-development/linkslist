@@ -26,7 +26,7 @@ class LinksList
 				if($d[$i]['linksource'] == 'local')											// 'external' = external, '' = external, 'local' = local, 'page' = local page
 				{
 					$file = FilesModel::findById($d[$i]['file']);
-					$d[$i]['url'] = Environment::get('uri') . $file->path;
+					$d[$i]['url'] = Environment::get('base') . $file->path;
 				}
 				elseif($d[$i]['linksource'] == 'page')
 				{
