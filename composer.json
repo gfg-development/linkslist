@@ -1,0 +1,41 @@
+{
+    "name":"gfgdevelopment/linkslist",
+    "description":"LinksList extension for Contao Open Source CMS",
+    "keywords":["contao", "links", "list"],
+    "type":"contao-module",
+    "license":"LGPL-3.0+",
+    "authors":[
+        {
+            "name":"gfg-development",
+            "homepage":"http://gfg-development.de"
+        }
+    ],
+    "require":{
+        "php":">=5.4",
+        "contao/core-bundle":"~3.0 || ~4.1",
+        "contao-community-alliance/composer-plugin":"^2.4.1 || ~3.0"
+    },
+    "require-dev": {
+        "contao/core":"~3.0"
+    }
+    "conflict": {
+        "contao-legacy/linkslist": "*"
+    },
+    "replace": {
+        "contao-legacy/linkslist": "self.version"
+    },
+    "autoload": {
+        "psr-0": {
+        }
+    },
+    "extra":{
+        "contao": {
+            "sources": {
+                "": "system/modules/linkslist"
+            },
+            "runonce": [
+                "config/update.php"
+            ]
+        }
+    }
+}
