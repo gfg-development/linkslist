@@ -17,7 +17,7 @@
     },
     "require-dev": {
         "contao/core":"~3.0"
-    }
+    },
     "conflict": {
         "contao-legacy/linkslist": "*"
     },
