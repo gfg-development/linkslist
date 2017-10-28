@@ -1,5 +1,5 @@
 # linkslist - Contao Extension to manage linkslists
-This is a extension for the CMS Contao. With this extension you can create easy and fast one or more linkslist. Currently the extension is tested just for Contao 3. A version for Contao 4 compatible with composer is planed.
+This is a extension for the CMS Contao. With this extension you can create easy and fast one or more linkslist. The extension is compatible with Contao 3 and Contao 4. 
 
 Thanks to Just Schimmelpenninck for the dutch translation. 
 
