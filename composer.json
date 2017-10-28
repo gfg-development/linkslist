@@ -1,5 +1,5 @@
 {
-    "name":"gfgdevelopment/linkslist",
+    "name":"gfg-development/linkslist",
     "description":"LinksList extension for Contao Open Source CMS",
     "keywords":["contao", "links", "list"],
     "type":"contao-module",
