@@ -23,7 +23,7 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['linkslist_list'] = '{type_legend},
      'inputType'               => 'checkboxWizard',
      'foreignKey'              => 'tl_linkslist_list.name',
      'eval'                    => array('mandatory'=>true, 'multiple'=>true),
-     'sql'                     => "varchar(256) NOT NULL"
+     'sql'                     => "varchar(256) NOT NULL default ''"
  );
 
  $GLOBALS['TL_DCA']['tl_content']['fields']['linkslist_use_subtitles'] = array
