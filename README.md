@@ -24,4 +24,4 @@ The extension can also be installed from the Extension Repository of Contao [How
 
 
 
-[i1]: https://github.com/user/repo/issues/1
+[i1]: https://github.com/gfg-development/linkslist/issues/1
