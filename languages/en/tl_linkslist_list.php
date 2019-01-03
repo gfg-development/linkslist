@@ -9,6 +9,7 @@
  */
  
 $GLOBALS['TL_LANG']['tl_linkslist_list']['title_legend'] = 'Title';
+$GLOBALS['TL_LANG']['tl_linkslist_list']['config_legend'] = 'Configuration';
  
 $GLOBALS['TL_LANG']['tl_linkslist_list']['name'][0] = 'Title';
 $GLOBALS['TL_LANG']['tl_linkslist_list']['name'][1] = 'Insert linklist title';
@@ -24,5 +25,8 @@ $GLOBALS['TL_LANG']['tl_linkslist_list']['delete'][1] = 'Delete linklist ID %s';
  
 $GLOBALS['TL_LANG']['tl_linkslist_list']['show'][0] = 'Linklist details';
 $GLOBALS['TL_LANG']['tl_linkslist_list']['show'][1] = 'Show linklist details ID %s';
+
+$GLOBALS['TL_LANG']['tl_linkslist_list']['target'][0] = 'Open links in new window.';
+$GLOBALS['TL_LANG']['tl_linkslist_list']['target'][1] = 'Please select if links should be opened in new window (target="_blank")';
 
 ?>
