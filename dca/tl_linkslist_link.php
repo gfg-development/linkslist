@@ -2,7 +2,7 @@
 
 /**
 *
-* Copyright (c) 2014 gfg-development
+* Copyright (c) 2019 gfg-development
 *
 * @link    http://www.gfg-development.de
 * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -89,7 +89,7 @@ $GLOBALS['TL_DCA']['tl_linkslist_link'] = array
 	'palettes' => array
 	(
 		'__selector__'  => array('linksource'),
-		'default'       => '{title_legend},name;{link_legend},linksource,linksource_local,linksource_external,linksource_page,target,description,info'
+		'default'       => '{title_legend},name;{link_legend},linksource,linksource_local,linksource_external,linksource_page,target,info,description'
 	),
 	'subpalettes' => array
 	(
@@ -166,9 +166,11 @@ $GLOBALS['TL_DCA']['tl_linkslist_link'] = array
 		'description'    => array
 		(
 			'label'         => &$GLOBALS['TL_LANG']['tl_linkslist_link']['description'],
-			'inputType' => 'text',
-			'exclude'     => true,
-			'sql'            => "text NULL"
+			'exclude'       => true,
+			'search'        => true,
+			'inputType'     => 'textarea',
+			'eval'          => array('rte'=>'tinyMCE', 'tl_class'=>'clr'),
+			'sql'           => "text NULL"
 		),
 		'info'    => array
 		(
