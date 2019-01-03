@@ -19,5 +19,9 @@ The extension can also be installed from the Extension Repository of Contao [How
 ## Changelog
 
 ### 1.3.0
-- Added tinyMCE to the description field. This lead to a change in the template.
-- Changed order of fields when editing links.  
+- [feature] Added tinyMCE to the description field (was requested via an issue [#1][i1]). This lead to a change in the template.
+- [enhancement] Changed order of fields when editing links.  
+
+
+
+[i1]: https://github.com/user/repo/issues/1
